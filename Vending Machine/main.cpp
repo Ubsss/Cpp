@@ -6,16 +6,14 @@
 //  Copyright © 2018 Uchechukwu Uboh. All rights reserved.
 //
 
-#include <iostream>
 #include "vendingMachine.cpp"
 
 using namespace std;
 int main() {
-    int select;
+    vending_Machine myVendingMachine;
     
     while(1){
-    vending_Machine myVendingMachine;
-    myVendingMachine.enter_cash(select);
+    myVendingMachine.enter_cash();
     }
     
     return 0;

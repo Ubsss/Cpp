@@ -11,29 +11,23 @@
 
 class vendingMachine{
 public:
-    // increments input_amount variable based on preset amounts
+    
+    // Keeps track of customer balance
     void enter_cash();
     
-    // if dispense_soda is true:
-    //      Calculate chage and return
-    // else:
-    //      calculate amount needed to equal soda cost and return
-    double calculate_change(double cash);
-    
-    // takes incremented amount and compares it to cost of soda
-    // return true if requal and return false if not
-    
-    // soda dispensed message
+    // Calculate change by comparing input_amount and soda_cost
+    double calculate_change();
+
+    // Soda dispense message based on dispense_soda bool
     void dispense_message();
     
 private:
+    int selection;
     double soda_cost;
-    // increamented amount
     double input_amount;
     double nickel;
     double dime;
     double quarter;
     bool dispense_soda;
 };
-
 #endif /* vendingMachine_h */

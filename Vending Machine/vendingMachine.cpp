@@ -9,14 +9,14 @@
 #include "vendingMachine.h"
 #include <iostream>
 #include <cmath>
-
 using namespace std;
 
 class vending_Machine: public vendingMachine{
 public:
-    // increments input_amount variable based on preset amounts
-    void enter_cash(int selection){
-        while (selection != 4){
+    
+    void enter_cash(){
+        
+        while (1){
         cout<<"A soda cost 20 cents and you have a balance of $"<<input_amount<<"\nPlease select your input amount: "<<endl<<endl;
         cout<<"Enter 1 to input a nickel or 5 cents."<<endl;
         cout<<"Enter 2 to input a dime or 10 cents."<<endl;
@@ -74,12 +74,13 @@ public:
     
     void dispense_message(){
         if(dispense_soda == true)
-            cout<<"Congratulation, our soda has been dispensed! :D"<<endl;
+            cout<<"Congratulation, your soda has been dispensed! :D"<<endl;
         else
             cout<<"Sorry, not enough cash for soda! D:"<<endl;
     }
     
 private:
+    int selection;
     double soda_cost = 0.20;
     double input_amount;
     double nickel = 0.05;
