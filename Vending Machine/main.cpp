@@ -7,10 +7,16 @@
 //
 
 #include <iostream>
+#include "vendingMachine.cpp"
 
 using namespace std;
 int main() {
-
-    cout << "Hello, World!\n";
+    int select;
+    
+    while(1){
+    vending_Machine myVendingMachine;
+    myVendingMachine.enter_cash(select);
+    }
+    
     return 0;
 }
