@@ -24,7 +24,7 @@ public:
     void append (const DataType item); // Add a new item to the end of the vector
     void insertAt (const int index, const DataType item );  // Insert a new element at the given index
     void removeAt (const int index );        // Remove the data item at the given index
-    void remove(int item);                   // Remove the given element from the vector
+    void remove(DataType item); //**** Remove the given element from the vector
     void clear ();                         // Make the vector empty
     
     // Vector status operations
