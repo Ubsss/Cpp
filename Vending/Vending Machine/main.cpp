@@ -10,10 +10,16 @@
 
 using namespace std;
 int main() {
-    vending_Machine myVendingMachine;
+//    vending_Machine myVendingMachine;
+//
+//    while(1){
+//    myVendingMachine.enter_cash();
+//    }
+    char *p = "abc";
+    char *q = "abc123";
     
-    while(1){
-    myVendingMachine.enter_cash();
+    while (*p = *q){
+        printf("%c %c\n", *p, *q);
     }
     
     return 0;
