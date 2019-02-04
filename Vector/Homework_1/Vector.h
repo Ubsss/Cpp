@@ -35,7 +35,7 @@ public:
     int  getSize() const;                      // Return the number of items in the vector
     DataType &operator[] (const int index);   // overloading subscript []
     
-    void print_vector(); //FOR DEBUGGING ONLY!!! REMOVE AFTER!!!
+    void print_vector(); //Print vector
     
 private:
     // Data members

@@ -14,28 +14,16 @@ using namespace std;
 int main() {
     
     Vector<int> intVect;
-    
-    
 
     intVect.insertAt(5, 10);
     intVect.insertAt(6, 10);
-    intVect.insertAt(5, 10);
-    intVect.insertAt(-4, 10);
     intVect.append(22);
-    intVect.removeAt(-3);
-    
-
-
-
     intVect.print_vector();
     cout<<"The vector contains "<< intVect.getSize()<<" items."<<endl;
+
+    intVect.clear();
+    cout<<"The vector contains "<< intVect.getSize()<<" items."<<endl;
     
-    
-//    Vector<char> charVect;
-//
-//    charVect.append('h');
-//    charVect.append('t');
-//    charVect.append('p');
-//    charVect.print_vector();
+    intVect.print_vector();
     return 0;
 }

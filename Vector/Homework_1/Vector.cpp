@@ -1,10 +1,10 @@
 //
 //  Vector.cpp
-//  Algo_HM1
 //
 //  Created by Uchechukwu Uboh on 1/28/19.
 //  Copyright © 2019 Uchechukwu Uboh. All rights reserved.
 //
+
 #include <iostream>
 #include "Vector.h"
 
@@ -17,16 +17,22 @@ Vector<DataType>::Vector(){
     dataItems = new DataType[capacity] ();
 };
 
+// Having issues with Distructor
 template <class DataType>
 Vector<DataType>::~Vector(){
-    delete[] dataItems;
-    dataItems = NULL;
-    delete dataItems;
+    if(dataItems != NULL){
+        delete[] dataItems;
+        dataItems = NULL;
+    }
     size = 0;
+    capacity = 2;
 };
 
 template <class DataType>
 void Vector<DataType>::append(const DataType item){
+    if(dataItems == NULL){
+        dataItems = new DataType[capacity];
+    }
     int current_capacity = capacity;
     if(isFull()){
         capacity = capacity * 2;
@@ -42,6 +48,9 @@ void Vector<DataType>::append(const DataType item){
 
 template <class DataType>
 void Vector<DataType>::insertAt(const int index, const DataType item ){
+    if(dataItems == NULL){
+        dataItems = new DataType[capacity];
+    }
     if(index > (capacity - 1)){
         int initial_capacity = capacity;
         while((capacity - 1) < index){
@@ -105,13 +114,11 @@ void Vector<DataType>::remove(DataType item){
     removeAt(contains(item));
 };
 
-// Make the vector empty
 template <class DataType>
 void Vector<DataType>::clear(){
-    cout<<"Attempting to clear the vector"<<endl;
     delete[] dataItems;
     dataItems = NULL;
-    dataItems = new DataType[capacity];
+    capacity = 2;
     size = 0;
 };
 
@@ -143,7 +150,7 @@ DataType  Vector<DataType>::elementAt(const int index) const{
     if(isEmpty()){
         return dataItems[0];
     }
-    if(index>capacity - 1 || index < 0){
+    if(index > capacity - 1 || index < 0){
         return dataItems[0];
     }
     return dataItems[index];
@@ -154,9 +161,14 @@ int  Vector<DataType>::getSize() const{
     return size;
 };
 
+// Ask
+// check to if dataItems points to NULL, what is dataItem[0]
 template <class DataType>
 DataType& Vector<DataType>::operator[] (const int index){
-    return dataItems[index];
+    if(index >= 0 && index < size){
+        return dataItems[index];
+    }
+    return dataItems[0];
 };
 
 template <class DataType>
