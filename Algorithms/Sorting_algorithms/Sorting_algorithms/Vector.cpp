@@ -17,7 +17,6 @@ Vector<DataType>::Vector(){
     dataItems = new DataType[capacity] ();
 };
 
-// Having issues with Distructor
 template <class DataType>
 Vector<DataType>::~Vector(){
     if(dataItems != NULL){
@@ -148,10 +147,10 @@ int  Vector<DataType>::contains(const DataType item) const{
 template <class DataType>
 DataType  Vector<DataType>::elementAt(const int index) const{
     if(isEmpty()){
-        return dataItems[0];
+        throw "Out of bounds";
     }
     if(index > capacity - 1 || index < 0){
-        return dataItems[0];
+        throw "Out of bounds";
     }
     return dataItems[index];
 };
@@ -161,24 +160,13 @@ int  Vector<DataType>::getSize() const{
     return size;
 };
 
-// Ask
-// check to if dataItems points to NULL, what is dataItem[0]
+// what type of error to throw?
 template <class DataType>
 DataType& Vector<DataType>::operator[] (const int index){
-    if(index >= 0 && index < size){
-        return dataItems[index];
+    if(index < 0 || index > size){
+        throw "Out of bounds";
     }
-    return dataItems[0];
-};
-
-template <class DataType>
-void Vector<DataType>::print_vector(){
-    if(size == 0){
-        return;
-    }
-    for(int i = 0; i<capacity;i++){
-        cout<<dataItems[i]<<endl;
-    }
+    return dataItems[index];
 };
 
 template class Vector<int>;
