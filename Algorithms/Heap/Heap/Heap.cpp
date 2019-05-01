@@ -24,13 +24,13 @@ void Heap<DataType>::insert(DataType item){
     heap.push_back(item);
 };
 
-// clear all items in Heap -
+// clear all items in Heap - DONE
 template <class DataType>
 void Heap<DataType>::clear(){
     heap.clear();
 };
 
-// turn Heap into Min Heap -
+// turn Heap into Min Heap - DONE
 template <class DataType>
 void Heap<DataType>::min_heap_sort(){
     // Build heap (rearrange array)
@@ -48,7 +48,7 @@ void Heap<DataType>::min_heap_sort(){
     }
 };
 
-// min_heapify helper
+// min_heapify helper - DONE
 template <class DataType>
 void  Heap<DataType>::min_heapify(vector<DataType> &list, int n, int idx){
     int smallest = idx; // Initialize largest as root
@@ -73,7 +73,7 @@ void  Heap<DataType>::min_heapify(vector<DataType> &list, int n, int idx){
     }    
 };
 
-// turn Heap into Max Heap -
+// turn Heap into Max Heap - DONE
 template <class DataType>
 void Heap<DataType>::max_heap_sort(){
     // Build heap (rearrange array)
@@ -91,7 +91,7 @@ void Heap<DataType>::max_heap_sort(){
     }
 };
 
-// max_heapify helper
+// max_heapify helper - DONE
 template <class DataType>
 void Heap<DataType>::max_heapify(vector<DataType> &list, int n, int idx){
     int largest = idx; // Initialize largest as root
@@ -119,14 +119,11 @@ void Heap<DataType>::max_heapify(vector<DataType> &list, int n, int idx){
 // print heap - DONE
 template <class DataType>
 void Heap<DataType>::print(){
-    for(int i = 0; i<heap.size(); i++)
-        cout<<heap[i]<<", ";
-    cout<<endl;
-//    if(root > heap.size()){
-//        cout<<"Heap is empty"<<endl;
-//        return;
-//    }
-//    print_helper(root);
+    if(root > heap.size()){
+        cout<<"Heap is empty"<<endl;
+        return;
+    }
+    print_helper(root);
 };
 
 // print number of items in Heap - DONE
