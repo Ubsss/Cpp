@@ -29,14 +29,12 @@ int main() {
     int_Heap.insert(21);
     int_Heap.insert(19);
     
-    int_Heap.min_Heapify();
-    cout<<"***************"<<endl;
+    int_Heap.max_heap_sort();
+    cout<<" MAX HEAP *************** MAX HEAP"<<endl;
     int_Heap.print();
     
-    int_Heap.del(21);
-    int_Heap.del(72);
-    
-    cout<<"***************"<<endl;
+    int_Heap.min_heap_sort();
+    cout<<" MIN HEAP *************** MIN HEAP"<<endl;
     int_Heap.print();
     
     

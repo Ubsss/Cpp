@@ -19,14 +19,12 @@ class Heap{
         Heap();
         // insert an itemm into Heap
         void insert(DataType item);
-        // delete an item from Heap
-        void del(DataType item);
         // clear all items in Heap
         void clear();
         // turn Heap into Min Heap
-        void min_Heapify();
+        void min_heap_sort();
         // turn Heap into Max Heap
-        void max_Heapify();
+        void max_heap_sort();
         // print heap
         void print();
         // print number of items in Heap
@@ -38,17 +36,19 @@ class Heap{
         // root node
         int root;
     
+        // Helper functions
         // print helper class
         void print_helper(int idx);
-        // Helper functions
+        // max_heapify helper
+        void max_heapify(vector<DataType> &list, int n, int idx);
+        // min_heapify helper
+        void min_heapify(vector<DataType> &list, int n,int idx);
         // return parent
         int get_Parent(int idx);
         // return left child
-        int get_Left_child(int idx);
+        int get_left_child(int idx);
         // return right child
         int get_right_child(int idx);
-    
-    
 };
 
 #endif /* Heap_h */
