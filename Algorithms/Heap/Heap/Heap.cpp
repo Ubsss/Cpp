@@ -119,6 +119,9 @@ void Heap<DataType>::max_heapify(vector<DataType> &list, int n, int idx){
 // print heap - DONE
 template <class DataType>
 void Heap<DataType>::print(){
+//    for(int i = 0; i  <heap.size(); i++)
+//        cout<<heap[i]<<", ";
+//    cout<<endl;
     if(root > heap.size()){
         cout<<"Heap is empty"<<endl;
         return;
